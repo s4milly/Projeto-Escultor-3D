@@ -16,12 +16,12 @@ Sculptor::Sculptor(int _nx, int _ny, int _nz){ //instancia a classe e alocacao d
      b = 0;
      a = 0;
 
-     v = new Voxel**[_nx]; //alocaÁ„o de memoria da 1 dimensao da matriz
+     v = new Voxel**[_nx]; //aloca√ß√£o de memoria da 1 dimensao da matriz
      for(int i=0; i<_nx; i++){
-         v[i] = new Voxel*[_ny]; //alocaÁ„o de memoria da 2 dimensao da matriz
+         v[i] = new Voxel*[_ny]; //aloca√ß√£o de memoria da 2 dimensao da matriz
 
          for(int j=0; j<_ny; j++){
-             v[i][j] = new Voxel [_nz]; //alocaÁ„o de memoria da 3 dimensao da matriz
+             v[i][j] = new Voxel [_nz]; //aloca√ß√£o de memoria da 3 dimensao da matriz
 
              for(int k=0; k<_nz; k++){
                  this -> v[i][j][k].r = 0;
@@ -56,7 +56,7 @@ void Sculptor::setColor(float red, float green, float blue, float alpha){
 }
 
 void Sculptor::putVoxel (int x, int y, int z){
-    //ativaÁao de um unico voxel
+    //ativa√ßao de um unico voxel
     this -> v [x][y][z].r = this -> r;
     this -> v [x][y][z].g = this -> g;
     this -> v [x][y][z].b = this -> b;
@@ -66,7 +66,7 @@ void Sculptor::putVoxel (int x, int y, int z){
 }
 
 void Sculptor::cutVoxel (int x, int y, int z){
-    this -> v [x][y][z].isOn = false; //desativaÁao de uma unico voxel
+    this -> v [x][y][z].isOn = false; //desativa√ßao de uma unico voxel
 }
 
 //ativacao de um bloco de voxels
@@ -98,7 +98,7 @@ void Sculptor::cutBox(int x0, int x1, int y0, int y1, int z0, int z1){
         }
     }
 }
-//ativaÁao de um bloco de voxels em forma de esfera
+//ativa√ßao de um bloco de voxels em forma de esfera
 void Sculptor::putSphere(int xcenter, int ycenter, int zcenter, int radius){
          for (int i = 0; i <nx ; i++){
             for (int j = 0; j < ny; j++){
@@ -117,7 +117,7 @@ void Sculptor::putSphere(int xcenter, int ycenter, int zcenter, int radius){
         }
 
 }
-//desativaÁao de um bloco de voxels em forma de esfera
+//desativa√ßao de um bloco de voxels em forma de esfera
 void Sculptor::cutSphere(int xcenter, int ycenter, int zcenter, int radius){
      for (int i = 0; i <nx ; i++){
             for (int j = 0; j < ny; j++){
@@ -129,7 +129,7 @@ void Sculptor::cutSphere(int xcenter, int ycenter, int zcenter, int radius){
             }
         }
 }
-//ativaÁao de um bloco de voxels em forma de elipsoide
+//ativa√ßao de um bloco de voxels em forma de elipsoide
 void Sculptor::putEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz){
      for (int i = 0; i <nx ; i++){
             for (int j = 0; j < ny; j++){
@@ -149,7 +149,7 @@ void Sculptor::putEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int r
         }
 }
 
-//desativaÁao de um bloco de voxels em forma de elipsoide
+//desativa√ßao de um bloco de voxels em forma de elipsoide
 void Sculptor::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz){
     for (int i = 0; i <nx ; i++){
             for (int j = 0; j < ny; j++){
@@ -162,7 +162,7 @@ void Sculptor::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int r
             }
         }
 }
-//gravaÁao do arquivo
+//grava√ßao do arquivo
 void Sculptor::writeOFF(char *filename){
     int total_vox=0, cont_vox=0;
 
@@ -201,7 +201,7 @@ void Sculptor::writeOFF(char *filename){
                 }
             }
         }
-    //especificaÁoes das faces e apresentacao das cores no formato RGBA
+    //especifica√ßoes das faces e apresentacao das cores no formato RGBA
         for (int i = 0; i <nx ; i++){
             for (int j = 0; j <ny; j++){
                 for (int k = 0; k <nz; k++){
@@ -221,5 +221,5 @@ void Sculptor::writeOFF(char *filename){
             }
         }
 
-    arquivo.close()// fechando o fluxo
+    arquivo.close();// fechando o fluxo
 }
